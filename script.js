@@ -83,12 +83,15 @@ submit.addEventListener('click',() => {
     console.log(checkedAnswer);
     if(checkedAnswer === quizDB[questionCount].ans)
     {
+        console.log(quizDB[questionCount]);
         score++;
     };
     deselectAll = () => {
         answers.forEach((curAnsElem) => curAnsElem.checked = false)
     }
     questionCount++;
+    deselectAll();    
+
     if(questionCount < quizDB.length)
     {
         loadQuestion();
@@ -97,10 +100,15 @@ submit.addEventListener('click',() => {
         showScore.innerHTML = `
         <h3> you scored ${score}/${quizDB.length} </h3>
         <button class = "btn" onclick="location.reload()" > </button>
-        
         `;
-        showScore.classList.remove('showArea');
+        showScore.classList.remove('scoreArea');
+        document.getElementById('ques').classList.add('deactive');
+        var els=document.getElementsByClassName('ques');
+        for(var i=0;i<els.length;i++)
+        {
+            els[i].classList.add('deactive');
+        }
     }
 });
-
+if(questionCount==0)
 loadQuestion();

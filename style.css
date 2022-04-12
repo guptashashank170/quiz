@@ -85,7 +85,9 @@ input{
 
 
 
-
+.deactive{
+    display: none;
+}
 
 
 
