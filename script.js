@@ -108,6 +108,8 @@ submit.addEventListener('click',() => {
         {
             els[i].classList.add('deactive');
         }
+
+
     }
 });
 if(questionCount==0)
