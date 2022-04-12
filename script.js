@@ -99,7 +99,7 @@ submit.addEventListener('click',() => {
         <button class = "btn" onclick="location.reload()" > </button>
         
         `;
-        showScore.classList.remove('showArea');
+        showScore.classList.remove('scoreArea');
     }
 });
 
